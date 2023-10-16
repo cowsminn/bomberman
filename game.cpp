@@ -26,8 +26,11 @@ void game::run()
                               << "New height: " << this->window->getSize().y << '\n';
                     break;
                 case sf::Event::KeyPressed:
-                    std::cout << "Received key " << (e.key.code == sf::Keyboard::X ? "X" : "(other)") << "\n";
-                    break;
+                    if(e.key.code == sf::Keyboard::Escape)
+                        this->window->close();
+                        else std::cout << "Received key " << (e.key.code == sf::Keyboard::X ? "X" : "(other)") << "\n";
+                        break;
+
                 default:
                     break;
             }
@@ -35,7 +38,8 @@ void game::run()
         this->update();
         this->render();
     }
-
+    this->window->clear();
+    this->window->display();
 }
 
 void game::initWindow()
