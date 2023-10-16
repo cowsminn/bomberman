@@ -1,6 +1,7 @@
 #include <SFML/Audio.hpp>
 #include <SFML/Graphics.hpp>
 #include <SFML/System.hpp>
+#include <iostream>
 
 #ifndef OOP_PLAYER_H
 #define OOP_PLAYER_H
@@ -16,6 +17,8 @@ private:
 public:
     player();
     virtual ~player();
+
+    explicit player(const sf::Sprite &sprite);
 
     void update();
     void render(sf::RenderTarget& target);
