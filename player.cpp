@@ -8,13 +8,8 @@ player::player() {
     }
 }
 
-player::player(const sf::Sprite &sprite) : sprite(sprite) {
-
-    this->sprite.setTexture(this->texture);
-
-}
-
 player::~player() {
+
 
 }
 

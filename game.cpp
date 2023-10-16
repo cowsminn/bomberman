@@ -2,6 +2,7 @@
 
 game::game()
 {
+    this->window->getSize = nullptr;
     this->initWindow();
 
 }
@@ -15,7 +16,6 @@ game::~game()
 void game::run()
 {
     while(this->window->isOpen()) {
-        sf::Event e;
         while (this->window->pollEvent(e)) {
             switch (e.type) {
                 case sf::Event::Closed:
@@ -38,8 +38,7 @@ void game::run()
         this->update();
         this->render();
     }
-    this->window->clear();
-    this->window->display();
+
 }
 
 void game::initWindow()
@@ -50,8 +49,7 @@ void game::initWindow()
 
 void game::render()
 {
-    this->window->clear();
-
+    this->window->clear(sf::Color::Magenta);
     this->window->display();
 
 

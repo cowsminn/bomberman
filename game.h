@@ -9,6 +9,7 @@
 class game {
 private:
     sf::RenderWindow* window;
+    sf::Event e;
 
     void initWindow();
 

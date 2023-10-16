@@ -11,18 +11,10 @@ class player {
 private:
     sf::Sprite sprite;
     sf::Texture texture;
-
-    void initTexture();
-    void initSprite();
 public:
     player();
     virtual ~player();
-
-    explicit player(const sf::Sprite &sprite);
-
     void update();
-    void render(sf::RenderTarget& target);
-
 };
 
 
