@@ -1,6 +1,6 @@
-#include "game.h"
+#include "Game.h"
 
-game::game()
+Game::Game()
 {
     this->window = nullptr;
     this->initWindow();
@@ -8,14 +8,14 @@ game::game()
 
 }
 
-game::~game()
+Game::~Game()
 {
     delete this->window;
     delete this->player;
 
 }
 
-void game::run()
+void Game::run()
 {
     while(this->window->isOpen()) {
         while (this->window->pollEvent(e)) {
@@ -43,14 +43,14 @@ void game::run()
 
 }
 
-void game::initWindow()
+void Game::initWindow()
 {
     this->window = new sf::RenderWindow(sf::VideoMode({800, 700}), "BomberMan", sf::Style::Default);
     this->window->setFramerateLimit(59);
     this->window->setVerticalSyncEnabled(false);
 }
 
-void game::render()
+void Game::render()
 {
     this->window->clear(sf::Color::White);
     this->player->render(*this->window);
@@ -60,7 +60,7 @@ void game::render()
 
 }
 
-void game::update() {
+void Game::update() {
 
     if(sf::Keyboard::isKeyPressed(sf::Keyboard::A))
         this->player->move(-1.f,0.f);
@@ -74,7 +74,7 @@ void game::update() {
 
 }
 
-void game::initPlayer() {
+void Game::initPlayer() {
 
     this->player = new class player();
 

@@ -8,7 +8,7 @@
 #define OOP_PLAYER_H
 
 
-class player {
+class Player {
 private:
     sf::Sprite sprite;
     sf::Texture texture;
@@ -17,8 +17,8 @@ private:
     void initSprite();
     void initTexture();
 public:
-    player();
-    virtual ~player();
+    Player();
+    virtual ~Player();
 
     void move(const float dirX, const float dirY);
     void update();

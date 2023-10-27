@@ -1,43 +1,43 @@
-#include "player.h"
+#include "Player.h"
 
 
 
-player::player() {
+Player::Player() {
     this->initTexture();
     this->initSprite();
     this->speed = 10.f;
 
 }
 
-player::~player() {
+Player::~Player() {
 
 
 }
 
-void player::update() {
+void Player::update() {
 
 }
 
-void player::render(sf::RenderTarget& target) {
+void Player::render(sf::RenderTarget& target) {
     target.draw(this->sprite);
 }
 
 
-void player::initSprite() {
+void Player::initSprite() {
     this->sprite.setTexture(this->texture);
 
     this->sprite.scale(0.2f,0.2f);
 
 }
 
-void player::initTexture() {
+void Player::initTexture() {
 
     if (!this->texture.loadFromFile("C:/Users/cosmi/Documents/Projects/bomberman/textures/yandhi.jpg")) {
-        std::cout << "eroare : textura player" << '\n';
+        std::cout << "eroare : textura Player" << '\n';
     }
 }
 
-void player::move(const float dirX, const float dirY) {
+void Player::move(const float dirX, const float dirY) {
     this->sprite.move(this->speed * dirX, this->speed * dirY);
 
 

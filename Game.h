@@ -2,24 +2,24 @@
 #include <SFML/System.hpp>
 #include <iostream>
 #include <vector>
-#include "player.h"
+#include "Player.h"
 #ifndef OOP_GAME_H
 #define OOP_GAME_H
 
 
-class game {
+class Game {
 private:
     sf::RenderWindow* window;
     sf::Event e;
 
-    player* player;
+    Player* player;
 
     void initWindow();
     void initPlayer();
 
 public:
-    game();
-    virtual ~game();
+    Game();
+    virtual ~Game();
 
     void run();
     void update();
