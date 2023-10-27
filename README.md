@@ -3,7 +3,7 @@
   Bomberman (ボンバーマン, Bonbāman, also briefly known as Dyna Blaster in Europe) is a video game franchise originally developed by Hudson Soft and currently owned by Konami. The original game, also known as Bakudan Otoko (爆弾男), was released in Japan in July 1983 and has since spawned multiple sequels and spin-offs released on numerous platforms, as well as several anime and manga adaptations.
 [ <sup>[1]<sup> ](https://en.wikipedia.org/wiki/Bomberman)
 
-###Movement
+### Movement
 You can move the player using the `W`, `A`, `S` and `D` on your keyboard.
 
 In order to quit the game, press the `ESC` key.
