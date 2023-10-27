@@ -76,7 +76,7 @@ void Game::update() {
 
 void Game::initPlayer() {
 
-    this->player = new class player();
+    this->player = new class Player();
 
 }
 
