@@ -6,7 +6,7 @@
 ### Movement
 You can move the player using the `W`, `A`, `S` and `D` on your keyboard.
 
-In order to quit the game, press the `ESC` key.
+In order to quit the game, press the <kbd>ESC</kbd> key.
 
 
 

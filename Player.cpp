@@ -32,7 +32,7 @@ void Player::initSprite() {
 
 void Player::initTexture() {
 
-    if (!this->texture.loadFromFile("C:/Users/cosmi/Documents/Projects/bomberman/textures/yandhi.jpg")) {
+    if (!this->texture.loadFromFile("textures/yandhi.jpg")) {
         std::cout << "eroare : textura Player" << '\n';
     }
 }

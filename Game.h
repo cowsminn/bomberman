@@ -9,17 +9,17 @@
 
 class Game {
 private:
-    sf::RenderWindow* window;
-    sf::Event e;
+    sf::RenderWindow window;
 
-    Player* player;
+    Player player;
 
     void initWindow();
     void initPlayer();
 
 public:
     Game();
-    virtual ~Game();
+
+    ~Game();
 
     void run();
     void update();

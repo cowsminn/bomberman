@@ -18,7 +18,8 @@ private:
     void initTexture();
 public:
     Player();
-    virtual ~Player();
+
+    ~Player();
 
     void move(const float dirX, const float dirY);
     void update();
