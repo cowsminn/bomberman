@@ -86,20 +86,22 @@ Game::display_at_position(sf::RenderWindow &window, const std::string &texture_p
     window.draw(sprite);
 }
 
-void Game::display_outline(sf::RenderWindow &window, const std::string &texture_path, int sizeX, int sizeY) {
+void Game::display_outline(sf::RenderWindow &t_window, const std::string &texture_path, int sizeX, int sizeY) {
     float scale = 1.0f;
 
     float offset_x = calculate_offset_x(sizeX, scale);
     float offset_y = calculate_offset_y(sizeY, scale);
 
     for (int i = 0; i < sizeX; ++i) {
-        display_at_position(window, texture_path, offset_x + i * 64 * scale, offset_y, scale, 0.8f, 0.8f);
-        display_at_position(window, texture_path, offset_x + i * 64 * scale, offset_y + (sizeY - 1) * 64 * scale, scale,
+        display_at_position(t_window, texture_path, offset_x + i * 64 * scale, offset_y, scale, 0.8f, 0.8f);
+        display_at_position(t_window, texture_path, offset_x + i * 64 * scale, offset_y + (sizeY - 1) * 64 * scale,
+                            scale,
                             0.8f, 0.8f);
     }
     for (int j = 1; j < sizeY - 1; ++j) {
-        display_at_position(window, texture_path, offset_x, offset_y + j * 64 * scale, scale, 0.8f, 0.8f);
-        display_at_position(window, texture_path, offset_x + (sizeX - 1) * 64 * scale, offset_y + j * 64 * scale, scale,
+        display_at_position(t_window, texture_path, offset_x, offset_y + j * 64 * scale, scale, 0.8f, 0.8f);
+        display_at_position(t_window, texture_path, offset_x + (sizeX - 1) * 64 * scale, offset_y + j * 64 * scale,
+                            scale,
                             0.8f, 0.8f);
     }
 }
