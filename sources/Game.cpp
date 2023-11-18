@@ -1,6 +1,6 @@
 #include "../headers/Game.h"
 
-Game::Game() {
+Game::Game() : lines(0), columns(0) {
     this->initWindow();
 }
 
