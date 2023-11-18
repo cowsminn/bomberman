@@ -1,6 +1,6 @@
 #include "../headers/Game.h"
 
-Game::Game() : lines(0), columns(0), window(sf::VideoMode({1280, 720}), "BomberMan", sf::Style::Default) {
+Game::Game() : lines(0), columns(0) {
     this->initWindow();
 }
 
