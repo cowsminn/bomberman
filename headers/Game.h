@@ -36,7 +36,7 @@ public:
 
     void display_outline(sf::RenderWindow &window, const std::string &texture_path, int sizeX, int sizeY);
 
-    friend std::ostream &operator<<(std::ostream &os, const Game &st);
+//    friend std::ostream &operator<<(std::ostream &os, const Game &st);
 
 };
 

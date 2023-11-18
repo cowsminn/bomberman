@@ -21,7 +21,7 @@ public:
     Player();
     ~Player();
 
-    friend std::ostream &operator<<(std::ostream &os, const Player &st);
+//    friend std::ostream &operator<<(std::ostream &os, const Player &st);
 
     void move(float dirX, float dirY);
     void update();

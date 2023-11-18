@@ -6,9 +6,10 @@ Game::Game() {
 
 Game::~Game() {}
 
-std::ostream &operator<<(std::ostream &os, const Game &st) {
-    std::cout << "test";
-}
+//std::ostream &operator<<(std::ostream &os, const Game &st) {
+//    std::cout << "test";
+//    return os;
+//}
 
 void Game::run() {
     while (this->window.isOpen()) {
