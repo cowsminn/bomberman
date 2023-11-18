@@ -109,10 +109,18 @@ endif()
 
 # NOTE: update executable name in .github/workflows/cmake.yml:25 when changing name here
 add_executable(${PROJECT_NAME} main.cpp
-        Player.cpp
-        Player.h
-        Game.cpp
-        Game.h)
+        sources/Player.cpp
+        headers/Player.h
+        sources/Game.cpp
+        headers/Game.h
+        sources/Bomb.cpp
+        headers/Bomb.h
+        sources/Wall.cpp
+        headers/Wall.h
+        sources/Breakable_Wall.cpp
+        headers/Breakable_Wall.h
+        sources/Map.cpp
+        headers/Map.h)
 
 ###############################################################################
 

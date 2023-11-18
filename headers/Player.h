@@ -16,12 +16,14 @@ private:
 
     void initSprite();
     void initTexture();
+
 public:
     Player();
-
     ~Player();
 
-    void move(const float dirX, const float dirY);
+    friend std::ostream &operator<<(std::ostream &os, const Player &st);
+
+    void move(float dirX, float dirY);
     void update();
     void render(sf::RenderTarget& target);
 };

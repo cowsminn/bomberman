@@ -1,4 +1,4 @@
-#include "Game.h"
+#include "headers/Game.h"
 
 #ifdef __linux__
 #include <X11/Xlib.h>
@@ -8,6 +8,5 @@ int main()
 {
     Game game;
     game.run();
-
     return 0;
 }
