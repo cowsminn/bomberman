@@ -19,7 +19,6 @@ private:
 
     float calculate_offset_y(int size, float scale) const;
 
-    int dir_X, dir_Y;
     int lines, columns;
 
 public:

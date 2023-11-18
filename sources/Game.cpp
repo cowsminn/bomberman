@@ -4,10 +4,6 @@ Game::Game() {
     this->initWindow();
 }
 
-Game::Game(float dir_X, float dir_Y) {
-
-}
-
 Game::~Game() {}
 
 std::ostream &operator<<(std::ostream &os, const Game &st) {
