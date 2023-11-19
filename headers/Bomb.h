@@ -17,9 +17,9 @@ public:
 
     void activate();
 
-    void deactivate();
+//    void deactivate();
 
-    bool isActiveBomb() const;
+    [[nodiscard]] bool isActiveBomb() const;
 
     void draw(sf::RenderWindow &window) const;
 

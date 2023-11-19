@@ -1,9 +1,10 @@
 #include "../headers/Game.h"
 
-Game::Game() : map(window), bomb() {
+Game::Game() : map(window), bomb(), test() {
     this->initWindow();
     bombCooldownClock.restart();
     bombCooldownDuration = sf::seconds(5.0f);
+    test = 1;
 }
 
 Game::~Game() {}

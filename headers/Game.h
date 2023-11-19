@@ -21,7 +21,7 @@ private:
     Bomb bomb;
     void initWindow();
 
-    int lines, columns, test;
+    int test;
 
 public:
     Game();

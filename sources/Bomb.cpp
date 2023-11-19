@@ -19,9 +19,9 @@ void Bomb::move(float dirX, float dirY) {
     sprite.move(dirX, dirY);
 }
 
-void Bomb::deactivate() {
-    isActive = false;
-}
+//void Bomb::deactivate() {
+//    isActive = false;
+//}
 
 bool Bomb::isActiveBomb() const {
     return isActive;
