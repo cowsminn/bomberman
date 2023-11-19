@@ -8,7 +8,7 @@ Player::Player() {
 }
 
 Player::Player(float startX, float startY) : position(startX, startY) {
-
+    this->speed = 3.f;
 }
 
 //std::ostream &operator<<(std::ostream &os, const Player &st) {
