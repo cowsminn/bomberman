@@ -1,35 +1,37 @@
-#ifndef OOP_MAP_H
-#define OOP_MAP_H
+#ifndef MAP_H
+#define MAP_H
 
-#include <vector>
 #include <SFML/Graphics.hpp>
-#include "Player.h"
-#include "Wall.h"
-#include "Bomb.h"
-#include "Breakable_Wall.h"
-
+#include <iostream>
 
 class Map {
 private:
-//    int lines, columns;
-//    std::vector<Wall> walls;
-//    std::vector<Breakable_Wall> br_walls;
-//    Player player;
-//    float dir_x, dir_Y;
+    sf::RenderWindow &window;
+    sf::Sprite sprite;
+    sf::Texture texture;
+    std::string texture_path;
+
+    void initSprite();
+
+    void initTexture();
 
 public:
-//    Map();
-//
-//    Map(int lines, int columns, const std::vector<Wall> &walls, const std::vector<Breakable_Wall> &br_walls,
-//        const Player &player);
-//
-//    friend std::ostream &operator<<(std::ostream &os, const Map &st);
-//
-//    void display_outline(sf::RenderWindow &window) const;
-//
-//    [[nodiscard]] float calculate_offset_x(float scale = 1) const;
-//
-//    [[nodiscard]] float calculate_offset_y(float scale = 1) const;
+    explicit Map(sf::RenderWindow &window);
+
+    Map();
+
+    ~Map();
+
+    static void display_at_position(sf::RenderWindow &window, const std::string &texture_path, float offset_x = 0,
+                                    float offset_y = 0, float scale = 1, float scale_x = 1, float scale_y = 1);
+
+    void display_outline(int sizeX, int sizeY) const;
+
+    float calculate_offset_x(int size, float scale) const;
+
+    float calculate_offset_y(int size, float scale) const;
+
+    bool checkCollision(float x, float y) const;
 };
 
-#endif //OOP_MAP_H
+#endif

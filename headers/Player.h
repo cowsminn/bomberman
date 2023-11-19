@@ -12,13 +12,22 @@ class Player {
 private:
     sf::Sprite sprite;
     sf::Texture texture;
+    sf::Vector2f position;
     float speed;
+
 
     void initSprite();
     void initTexture();
 
 public:
     Player();
+
+    Player(float startX, float startY);
+
+    sf::Vector2f getPosition() const;
+
+    void setPosition(float x, float y);
+
     ~Player();
 
 //    friend std::ostream &operator<<(std::ostream &os, const Player &st);

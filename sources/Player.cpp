@@ -1,11 +1,13 @@
 #include "../headers/Player.h"
 
-
-
 Player::Player() {
     this->initTexture();
     this->initSprite();
     this->speed = 3.f;
+
+}
+
+Player::Player(float startX, float startY) : position(startX, startY) {
 
 }
 
@@ -17,6 +19,14 @@ Player::Player() {
 Player::~Player() {
 
 
+}
+
+sf::Vector2f Player::getPosition() const {
+    return position;
+}
+
+void Player::setPosition(float x, float y) {
+    this->position = sf::Vector2f(x, y);
 }
 
 void Player::update() {
@@ -71,7 +81,8 @@ void Player::initTexture() {
 
 void Player::move(const float dirX, const float dirY) {
     this->sprite.move(this->speed * dirX, this->speed * dirY);
-
+    this->position = this->sprite.getPosition();
 }
+
 
 
