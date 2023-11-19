@@ -23,9 +23,9 @@ void Bomb::move(float dirX, float dirY) {
 //    isActive = false;
 //}
 
-bool Bomb::isActiveBomb() const {
-    return isActive;
-}
+//bool Bomb::isActiveBomb() const {
+//    return isActive;
+//}
 
 void Bomb::draw(sf::RenderWindow &window) const {
     if (isActive) {

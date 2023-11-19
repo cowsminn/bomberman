@@ -19,7 +19,7 @@ public:
 
 //    void deactivate();
 
-    [[maybe_unused]] bool isActiveBomb() const;
+//    [[maybe_unused]] bool isActiveBomb() const;
 
     void draw(sf::RenderWindow &window) const;
 
