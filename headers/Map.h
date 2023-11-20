@@ -17,7 +17,7 @@ private:
 
 public:
 
-    Map(sf::RenderWindow &window);
+    explicit Map(sf::RenderWindow &window);
 
     Map();
 
