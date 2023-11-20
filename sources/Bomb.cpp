@@ -33,3 +33,17 @@ void Bomb::draw(sf::RenderWindow &window) const {
     }
 }
 
+Bomb::~Bomb() {
+
+}
+
+Bomb::Bomb(const Bomb &other) : isActive(other.isActive){
+
+}
+
+std::ostream &operator<<(std::ostream &os, const Bomb &st) {
+    os << "op << bomb";
+    return os;
+}
+
+

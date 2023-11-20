@@ -11,13 +11,12 @@ Player::Player(float startX, float startY) : position(startX, startY) {
     this->speed = 3.f;
 }
 
-//std::ostream &operator<<(std::ostream &os, const Player &st) {
-//    os << "Position: " << "\n";
-//    return os;
-//}
+std::ostream &operator<<(std::ostream &os, const Player &st) {
+    os << "Position: " << "\n";
+    return os;
+}
 
 Player::~Player() {
-
 
 }
 
@@ -82,6 +81,17 @@ void Player::initTexture() {
 void Player::move(const float dirX, const float dirY) {
     this->sprite.move(this->speed * dirX, this->speed * dirY);
     this->position = this->sprite.getPosition();
+}
+
+Player::Player(const Player &other) : speed(other.speed){
+    std::cout << " const de copiere";
+}
+
+Player &Player::operator=(const Player &other) {
+
+    speed = other.speed;
+
+    return *this;
 }
 
 

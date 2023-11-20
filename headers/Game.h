@@ -31,7 +31,8 @@ public:
     void update();
     void render();
 
-//    friend std::ostream &operator<<(std::ostream &os, const Game &st);
+    friend std::ostream &operator<<(std::ostream &os, const Game &st);
+
 };
 
 #endif //OOP_GAME_H

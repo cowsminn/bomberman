@@ -66,6 +66,11 @@ float Map::calculate_offset_y(int size, float scale) const {
     return offset_y;
 }
 
+std::ostream &operator<<(std::ostream &os, const Map &st) {
+    os << "opp << map";
+    return os;
+}
+
 
 
 

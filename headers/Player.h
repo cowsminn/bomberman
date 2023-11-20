@@ -30,7 +30,11 @@ public:
 
     ~Player();
 
-//    friend std::ostream &operator<<(std::ostream &os, const Player &st);
+    Player(const Player& other);
+
+    Player& operator=(const Player& other);
+
+    friend std::ostream &operator<<(std::ostream &os, const Player &st);
 
     void move(float dirX, float dirY);
     void update();

@@ -16,7 +16,8 @@ private:
     void initTexture();
 
 public:
-    explicit Map(sf::RenderWindow &window);
+
+    Map(sf::RenderWindow &window);
 
     Map();
 
@@ -26,6 +27,8 @@ public:
                                     float offset_y = 0, float scale = 1, float scale_x = 1, float scale_y = 1);
 
     void display_outline(int sizeX, int sizeY) const;
+
+    friend std::ostream &operator<<(std::ostream &os, const Map &st);
 
     float calculate_offset_x(int size, float scale) const;
 

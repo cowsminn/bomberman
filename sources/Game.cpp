@@ -8,10 +8,10 @@ Game::Game() : map(window), bomb(), test(1){
 
 Game::~Game() {}
 
-//std::ostream &operator<<(std::ostream &os, const Game &st) {
-//    std::cout << "test";
-//    return os;
-//}
+std::ostream &operator<<(std::ostream &os, const Game &st) {
+    os << "op << game";
+    return os;
+}
 
 void Game::run() {
     while (this->window.isOpen()) {
@@ -85,3 +85,4 @@ void Game::update() {
         bombCooldownClock.restart();
     }
 }
+

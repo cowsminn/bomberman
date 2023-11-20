@@ -6,6 +6,8 @@
 
 int main()
 {
+    Player player;
+    std::cout << player;
     Game game;
     game.run();
     return 0;
