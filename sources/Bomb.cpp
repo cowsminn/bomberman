@@ -42,7 +42,7 @@ Bomb::Bomb(const Bomb &other) : isActive(other.isActive){
 }
 
 std::ostream &operator<<(std::ostream &os, const Bomb &st) {
-    os << "op << bomb";
+    os << st.isActive << " op << bomb";
     return os;
 }
 

@@ -12,7 +12,7 @@ Player::Player(float startX, float startY) : position(startX, startY) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Player &st) {
-    os << "Position: " << "\n";
+    os << st.speed << " Position: " << "\n";
     return os;
 }
 

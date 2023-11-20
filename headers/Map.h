@@ -10,6 +10,7 @@ private:
     sf::Sprite sprite;
     sf::Texture texture;
     std::string texture_path;
+    int columns, lines;
 
     void initSprite();
 

@@ -1,6 +1,6 @@
 #include "../headers/Map.h"
 
-Map::Map(sf::RenderWindow &window) : window(window) {
+Map::Map(sf::RenderWindow &window) : window(window), columns(columns), lines(lines) {
     this->initTexture();
     this->initSprite();
     this->texture_path = "textures/Bark.png";
@@ -67,7 +67,7 @@ float Map::calculate_offset_y(int size, float scale) const {
 }
 
 std::ostream &operator<<(std::ostream &os, const Map &st) {
-    os << "opp << map";
+    os << st.lines << "opp << map";
     return os;
 }
 
