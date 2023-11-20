@@ -9,7 +9,7 @@ Game::Game() : map(window), bomb(), test(1){
 Game::~Game() {}
 
 std::ostream &operator<<(std::ostream &os, const Game &st) {
-    os << "op << game";
+    os << st.test << " op << game";
     return os;
 }
 

@@ -1,6 +1,6 @@
 #include "../headers/Map.h"
 
-Map::Map(sf::RenderWindow &window) : window(window), columns(columns), lines(lines) {
+Map::Map(sf::RenderWindow &window) : window(window), columns(), lines() {
     this->initTexture();
     this->initSprite();
     this->texture_path = "textures/Bark.png";
