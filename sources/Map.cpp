@@ -66,16 +66,17 @@ float Map::calculate_offset_y(int size, float scale) const {
     return offset_y;
 }
 
-std::ostream &operator<<(std::ostream &os, const Map &st) {
-    os << st.lines << "opp << map";
-    return os;
+Map::Map(const Map &other) : window(other.window),
+                             sprite(other.sprite),
+                             texture(other.texture),
+                             texture_path(other.texture_path),
+                             columns(other.columns),
+                             lines(other.lines) {
 }
 
-
-
-
-
-
-
-
-
+std::ostream &operator<<(std::ostream &os, const Map &map) {
+    os << "texture path: " << map.texture_path << "\n";
+    os << "columns: " << map.columns << "\n";
+    os << "lines: " << map.lines << "\n";
+    return os;
+}

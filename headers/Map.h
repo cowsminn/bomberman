@@ -24,6 +24,8 @@ public:
 
     ~Map();
 
+    Map(const Map &other);
+
     static void display_at_position(sf::RenderWindow &window, const std::string &texture_path, float offset_x = 0,
                                     float offset_y = 0, float scale = 1, float scale_x = 1, float scale_y = 1);
 
@@ -34,6 +36,7 @@ public:
     float calculate_offset_x(int size, float scale) const;
 
     float calculate_offset_y(int size, float scale) const;
+
 
     bool checkCollision(float x, float y) const;
 };
