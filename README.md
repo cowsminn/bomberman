@@ -64,4 +64,5 @@ In order to quit the game, press the <kbd>ESC</kbd> key.
 ## Resurse
 
 - [SFML](https://github.com/SFML/SFML/tree/2.6.0) (Zlib)
-- adăugați trimiteri către resursele externe care v-au ajutat sau pe care le-ați folosit
+- [Player sprite](https://opengameart.org/content/base-character-spritesheet-16x16)
+- [Map textures](https://opengameart.org/content/64x-textures-an-overlays?page=1)
