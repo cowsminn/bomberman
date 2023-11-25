@@ -6,9 +6,8 @@
 
 int main()
 {
-    Player player;
-    std::cout << player;
     Game game;
+    std::cout << game;
     game.run();
     return 0;
 }

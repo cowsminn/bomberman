@@ -12,7 +12,11 @@ Player::Player(float startX, float startY) : position(startX, startY) {
 }
 
 std::ostream &operator<<(std::ostream &os, const Player &st) {
-    os << st.speed << " Position: " << "\n";
+    os << "speed: " << st.speed << "\n";
+    os << "position: (" << st.position.x << ", " << st.position.y << ")\n";
+    os << "texture position: (" << st.sprite.getPosition().x << ", " << st.sprite.getPosition().y << ")\n";
+    os << "position of the player on the sprite png: (" << st.sprite.getTextureRect().left << ", " << st.sprite.getTextureRect().top << ", "
+       << st.sprite.getTextureRect().width << ", " << st.sprite.getTextureRect().height << ")\n";
     return os;
 }
 

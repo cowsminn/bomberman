@@ -2,8 +2,11 @@
 #define OOP_GAME_H
 
 #include <SFML/Graphics.hpp>
+#include <SFML/System/Sleep.hpp>
 #include <iostream>
 #include <vector>
+#include <chrono>
+#include <thread>
 #include "Player.h"
 #include "Wall.h"
 #include "Map.h"
@@ -22,6 +25,8 @@ private:
     void initWindow();
 
     int test;
+
+
 
 public:
     Game();

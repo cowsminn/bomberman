@@ -6,12 +6,24 @@ Game::Game() : map(window), bomb(), test(1){
     bombCooldownDuration = sf::seconds(5.0f);
 }
 
+
 Game::~Game() {}
 
-std::ostream &operator<<(std::ostream &os, const Game &st) {
-    os << st.test << " op << game";
-    return os;
+std::ostream &operator<<(std::ostream &os, const Game &game) {
+        os << "Test: " << game.test << "\n";
+        os << "Player:\n" << game.player;
+
+//        os << "Walls:\n";
+//        for (const Wall& wall : game.walls) {
+//            os << wall;
+//        }
+
+        os << "Map:\n" << game.map;
+        os << "Bomb:\n" << game.bomb << '\n';
+
+        return os;
 }
+
 
 void Game::run() {
     while (this->window.isOpen()) {

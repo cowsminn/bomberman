@@ -15,8 +15,6 @@ public:
 
     ~Bomb();
 
-    Bomb(const Bomb& other);
-
     friend std::ostream &operator<<(std::ostream &os, const Bomb &st);
 
     void setPosition(float x, float y);
