@@ -5,7 +5,7 @@
 
 ### Movement
 You can move the player using the `W`, `A`, `S` and `D` on your keyboard.
-You can place a bomb every 5 seconds by pressing 'SPACE', adding an element of calculated risk to every move you make.
+You can place a bomb every 5 seconds by pressing `SPACE`, adding an element of calculated risk to every move you make.
 In order to quit the game, press the <kbd>ESC</kbd> key.
 
 
