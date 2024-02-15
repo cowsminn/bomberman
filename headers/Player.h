@@ -1,45 +1,43 @@
-#include <SFML/Audio.hpp>
+#ifndef PLAYER_H
+#define PLAYER_H
+
 #include <SFML/Graphics.hpp>
-#include <SFML/System.hpp>
 #include <iostream>
-#include <vector>
-
-#ifndef OOP_PLAYER_H
-#define OOP_PLAYER_H
-
 
 class Player {
 private:
-    sf::Sprite sprite;
     sf::Texture texture;
+    sf::Sprite sprite;
     sf::Vector2f position;
     float speed;
+    sf::FloatRect bounds; // Define player bounds
 
+    void initTexture();
 
     void initSprite();
-    void initTexture();
 
 public:
     Player();
 
-    Player(float startX, float startY);
-
-    sf::Vector2f getPosition() const;
-
-    void setPosition(float x, float y);
+    Player(float startX, float startY, const sf::FloatRect &bounds);
 
     ~Player();
 
-    Player(const Player& other);
+    sf::Vector2f getPosition() const;
+    void setPosition(float x, float y);
 
-    Player& operator=(const Player& other);
+    void update();
+    void render(sf::RenderTarget& target);
+
+    void move(float dirX, float dirY);
+
+    void setBounds(const sf::FloatRect &bounds);
 
     friend std::ostream &operator<<(std::ostream &os, const Player &st);
 
-    void move(float dirX, float dirY);
-    void update();
-    void render(sf::RenderTarget& target);
+    Player(const Player &other);
+
+    Player &operator=(const Player &other);
 };
 
-
-#endif //OOP_PLAYER_H
+#endif // PLAYER_H

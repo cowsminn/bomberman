@@ -26,8 +26,6 @@ private:
 
     int test;
 
-
-
 public:
     Game();
     ~Game();

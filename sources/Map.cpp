@@ -3,7 +3,7 @@
 Map::Map(sf::RenderWindow &window) : window(window), columns(), lines() {
     this->initTexture();
     this->initSprite();
-    this->texture_path = "textures/Bark.png";
+    this->texture_path = "textures/wall.png";
 }
 
 Map::~Map() {
@@ -18,7 +18,7 @@ void Map::initSprite() {
 
 void Map::initTexture() {
 
-    if (!this->texture.loadFromFile("textures/Bark.png")) {
+    if (!this->texture.loadFromFile("textures/wall.png")) {
         std::cout << "eroare : textura Outline" << '\n';
     }
 
