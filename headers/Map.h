@@ -37,8 +37,6 @@ public:
 
     float calculate_offset_y(int size, float scale) const;
 
-
-    bool checkCollision(float x, float y) const;
 };
 
 #endif

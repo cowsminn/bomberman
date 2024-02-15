@@ -88,7 +88,6 @@ void Player::move(const float dirX, const float dirY) {
     float moveX = speed * dirX;
     float moveY = speed * dirY;
 
-    // Check if the move will keep the player within bounds
     if (position.x + moveX >= bounds.left && position.x + moveX <= bounds.left + bounds.width) {
         position.x += moveX;
     }
@@ -97,10 +96,6 @@ void Player::move(const float dirX, const float dirY) {
     }
 
     sprite.setPosition(position);
-}
-
-void Player::setBounds(const sf::FloatRect &bounds) {
-    this->bounds = bounds;
 }
 
 Player::Player(const Player &other) : speed(other.speed), bounds(other.bounds) {

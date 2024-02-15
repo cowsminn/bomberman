@@ -1,5 +1,5 @@
-#ifndef PLAYER_H
-#define PLAYER_H
+#ifndef OOP_PLAYER_H
+#define OOP_PLAYER_H
 
 #include <SFML/Graphics.hpp>
 #include <iostream>
@@ -27,11 +27,10 @@ public:
     void setPosition(float x, float y);
 
     void update();
+
     void render(sf::RenderTarget& target);
 
     void move(float dirX, float dirY);
-
-    void setBounds(const sf::FloatRect &bounds);
 
     friend std::ostream &operator<<(std::ostream &os, const Player &st);
 
@@ -40,4 +39,4 @@ public:
     Player &operator=(const Player &other);
 };
 
-#endif // PLAYER_H
+#endif // OOP_PLAYER_H
