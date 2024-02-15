@@ -1,14 +1,14 @@
 #ifndef BOMB_H
 #define BOMB_H
 
+#include "Static_Object.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
 
-class Bomb {
+class Bomb : public Static_Object {
 private:
-    sf::Texture texture;
-    sf::Sprite sprite;
     bool isActive;
+    sf::Clock timer;
 
 public:
     Bomb();
@@ -17,18 +17,12 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Bomb &st);
 
-    void setPosition(float x, float y);
-
     void activate();
 
+    void draw(sf::RenderWindow &window) const override;
 
-//    void deactivate();
+    void update();
 
-//    [[maybe_unused]] bool isActiveBomb() const;
-
-    void draw(sf::RenderWindow &window) const;
-
-    void move(float dirX, float dirY);
 };
 
 #endif // BOMB_H

@@ -120,7 +120,12 @@ add_executable(${PROJECT_NAME} main.cpp
         sources/Breakable_Wall.cpp
         headers/Breakable_Wall.h
         sources/Map.cpp
-        headers/Map.h)
+        headers/Map.h
+        headers/Exception.h
+        sources/Exception.cpp
+        headers/Static_Object.h
+        sources/Static_Object.cpp
+)
 
 ###############################################################################
 

@@ -3,7 +3,7 @@
 Game::Game() : map(window), bomb(), test(1){
     this->initWindow();
     bombCooldownClock.restart();
-    bombCooldownDuration = sf::seconds(5.0f);
+    bombCooldownDuration = sf::seconds(3.0f);
 }
 
 
@@ -15,7 +15,7 @@ std::ostream &operator<<(std::ostream &os, const Game &game) {
 
 //        os << "Walls:\n";
 //        for (const Wall& wall : game.walls) {
-//            os << wall;
+//              os << wall;
 //        }
 
         os << "Map:\n" << game.map;
@@ -45,14 +45,13 @@ void Game::run() {
                         bomb.activate();
                         bomb.setPosition(player.getPosition().x, player.getPosition().y);
                         test = 0;
-                    } else {
-                        std::cout << "Received key " << (e.key.code == sf::Keyboard::X ? "X" : "(other)") << "\n";
                     }
                     break;
                 default:
                     break;
             }
         }
+
         this->update();
         this->render();
     }
@@ -91,10 +90,14 @@ void Game::update() {
     }
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && bombCooldownClock.getElapsedTime() > bombCooldownDuration) {
+
         bomb.activate();
         bomb.setPosition(player.getPosition().x, player.getPosition().y);
 
         bombCooldownClock.restart();
     }
+
+    bomb.update();
 }
+
 

@@ -1,31 +1,25 @@
 #include "../headers/Bomb.h"
 
 Bomb::Bomb() : isActive(false) {
-    if (!texture.loadFromFile("textures/Bark.png")) {
-        std::cout << "err textura bomba\n";
+    if (!texture.loadFromFile("textures/bomb.png")) {
+        std::cout << "Error loading bomb texture.\n";
     }
-    sprite.setTexture(texture);
-}
 
-void Bomb::setPosition(float x, float y) {
-    sprite.setPosition(x, y);
+    sprite.setTexture(texture);
+    sprite.setTextureRect(sf::IntRect(40, 0, 20, 26));
+    sprite.scale(1.6f, 1.6f);
 }
 
 void Bomb::activate() {
     isActive = true;
+    timer.restart(); // Restart the timer when bomb is activated
 }
 
-void Bomb::move(float dirX, float dirY) {
-    sprite.move(dirX, dirY);
+void Bomb::update() {
+    if (isActive && timer.getElapsedTime().asSeconds() >= 3.0f) {
+        isActive = false;
+    }
 }
-
-//void Bomb::deactivate() {
-//    isActive = false;
-//}
-
-//bool Bomb::isActiveBomb() const {
-//    return isActive;
-//}
 
 void Bomb::draw(sf::RenderWindow &window) const {
     if (isActive) {
@@ -33,13 +27,9 @@ void Bomb::draw(sf::RenderWindow &window) const {
     }
 }
 
-Bomb::~Bomb() {
-
-}
+Bomb::~Bomb() {}
 
 std::ostream &operator<<(std::ostream &os, const Bomb &st) {
     os << st.isActive << " op << bomb";
     return os;
 }
-
-
