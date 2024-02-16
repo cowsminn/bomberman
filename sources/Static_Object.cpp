@@ -6,6 +6,8 @@ void Static_Object::setPosition(float x, float y) {
     sprite.setPosition(x, y);
 }
 
+Static_Object::Static_Object(const Static_Object &other) : texture(other.texture), sprite(other.sprite) {}
+
 void Static_Object::draw(sf::RenderWindow &window) const {
     window.draw(sprite);
 }
@@ -30,5 +32,4 @@ Static_Object &Static_Object::operator=(const Static_Object &other) {
     return *this;
 }
 
-Static_Object::Static_Object(const Static_Object &other) : sprite(other.sprite), texture(other.texture){}
 
