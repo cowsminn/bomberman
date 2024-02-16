@@ -12,7 +12,7 @@ private:
 public:
     explicit CustomException(std::string  = "Something went wrong.");
 
-    [[nodiscard]] const char *what() const noexcept override;
+    [[maybe_unused]] const char *what() const noexcept override;
 
 };
 
