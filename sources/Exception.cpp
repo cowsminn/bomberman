@@ -3,12 +3,12 @@
 #include <utility>
 
 CustomException::CustomException(std::string exceptionMessage) : exceptionMessage(std::move(exceptionMessage)) {}
+//
+//const char *CustomException::what() const noexcept {
+//    return exceptionMessage.c_str();
+//}
 
-const char *CustomException::what() const noexcept {
-    return exceptionMessage.c_str();
-}
-
-// FailedTextureLoad
+/// FailedTextureLoad
 FailedTextureLoad::FailedTextureLoad() :
         CustomException(std::string("Failed to load texture.")) {}
 
