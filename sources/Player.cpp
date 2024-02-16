@@ -80,7 +80,7 @@ void Player::initSprite() {
 
 void Player::initTexture() {
     if (!this->texture.loadFromFile("textures/Hero.png")) {
-        std::cout << "Error loading player texture.\n";
+        throw FailedTextureLoad("textures/Hero.png");
     }
 }
 

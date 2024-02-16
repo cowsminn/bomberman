@@ -19,7 +19,7 @@ void Map::initSprite() {
 void Map::initTexture() {
 
     if (!this->texture.loadFromFile("textures/wall.png")) {
-        std::cout << "eroare : textura Outline" << '\n';
+        throw FailedTextureLoad("textures/wall.png");
     }
 
 }

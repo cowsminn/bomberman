@@ -4,6 +4,7 @@
 #include "Static_Object.h"
 #include <SFML/Graphics.hpp>
 #include <iostream>
+#include "Exception.h"
 
 class Bomb : public Static_Object {
 private:

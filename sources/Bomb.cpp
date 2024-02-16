@@ -2,7 +2,7 @@
 
 Bomb::Bomb() :Static_Object(), isActive(false), basePtr(nullptr) {
     if (!texture.loadFromFile("textures/bomb.png")) {
-        std::cout << "Error loading bomb texture.\n";
+        throw FailedTextureLoad("textures/bomb.png");
     }
 
     sprite.setTexture(texture);
