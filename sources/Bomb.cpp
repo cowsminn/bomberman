@@ -14,7 +14,7 @@ Bomb *Bomb::clone() const{
     return new Bomb(*this);
 }
 
-Bomb::Bomb(const Bomb& other) : Static_Object(other), isActive(other.isActive), timer(other.timer) {}
+Bomb::Bomb(const Bomb& other) : Static_Object(other), isActive(other.isActive), timer(other.timer), basePtr(nullptr) {}
 
 void Bomb::activate() {
     isActive = true;
