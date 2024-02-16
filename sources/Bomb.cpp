@@ -1,6 +1,6 @@
 #include "../headers/Bomb.h"
 
-Bomb::Bomb() : isActive(false) {
+Bomb::Bomb() :Static_Object(), isActive(false), basePtr(nullptr) {
     if (!texture.loadFromFile("textures/bomb.png")) {
         std::cout << "Error loading bomb texture.\n";
     }
@@ -10,9 +10,15 @@ Bomb::Bomb() : isActive(false) {
     sprite.scale(1.6f, 1.6f);
 }
 
+Bomb *Bomb::clone() const{
+    return new Bomb(*this);
+}
+
+Bomb::Bomb(const Bomb& other) : Static_Object(other), isActive(other.isActive), timer(other.timer) {}
+
 void Bomb::activate() {
     isActive = true;
-    timer.restart(); // Restart the timer when bomb is activated
+    timer.restart();
 }
 
 void Bomb::update() {
@@ -26,8 +32,6 @@ void Bomb::draw(sf::RenderWindow &window) const {
         window.draw(sprite);
     }
 }
-
-Bomb::~Bomb() {}
 
 std::ostream &operator<<(std::ostream &os, const Bomb &st) {
     os << st.isActive << " op << bomb";

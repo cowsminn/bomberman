@@ -9,11 +9,18 @@ class Bomb : public Static_Object {
 private:
     bool isActive;
     sf::Clock timer;
+    Static_Object *basePtr;
 
 public:
     Bomb();
 
-    ~Bomb();
+    Bomb(const Bomb& other);
+
+    Bomb& operator=(Bomb other);
+
+    ~Bomb() override = default;
+
+    Bomb *clone() const override;
 
     friend std::ostream &operator<<(std::ostream &os, const Bomb &st);
 

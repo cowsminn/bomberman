@@ -10,7 +10,7 @@ private:
     sf::Sprite sprite;
     sf::Vector2f position;
     float speed;
-    sf::FloatRect bounds; // Define player bounds
+    sf::FloatRect bounds;
 
     void initTexture();
 

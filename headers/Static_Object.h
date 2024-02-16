@@ -9,13 +9,23 @@ protected:
     sf::Sprite sprite;
 
 public:
+    Static_Object();
+
     virtual ~Static_Object() {}
+
+    virtual Static_Object *clone() const = 0;
+
+    Static_Object(const Static_Object &other);
+
+    Static_Object &operator=(const Static_Object &other);
 
     virtual void setPosition(float x, float y);
 
     virtual void draw(sf::RenderWindow &window) const;
 
     virtual void move(float offsetX, float offsetY);
+
+    friend void swap(Static_Object &first, Static_Object &second) noexcept;
 };
 
 #endif //OOP_STATIC_OBJECT_H
