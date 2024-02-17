@@ -23,7 +23,6 @@ private:
     sf::Clock bombCooldownClock;
     sf::Time bombCooldownDuration;
     Map map;
-    Bomb bomb;
     void initWindow();
 
     int test;

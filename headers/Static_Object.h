@@ -26,6 +26,9 @@ public:
     virtual void move(float offsetX, float offsetY);
 
     friend void swap(Static_Object &first, Static_Object &second) noexcept;
+
+    virtual void activate() = 0;
+    virtual void explosion(sf::RenderWindow& window) = 0;
 };
 
 #endif //OOP_STATIC_OBJECT_H

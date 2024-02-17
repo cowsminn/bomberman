@@ -24,7 +24,9 @@ public:
 
     friend std::ostream &operator<<(std::ostream &os, const Bomb &st);
 
-    void activate();
+    void activate() override;
+
+    void explosion(sf::RenderWindow &window) override;
 
     void draw(sf::RenderWindow &window) const override;
 

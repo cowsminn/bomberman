@@ -24,6 +24,7 @@ void Bomb::activate() {
 void Bomb::update() {
     if (isActive && timer.getElapsedTime().asSeconds() >= 3.0f) {
         isActive = false;
+
     }
 }
 
@@ -36,4 +37,12 @@ void Bomb::draw(sf::RenderWindow &window) const {
 std::ostream &operator<<(std::ostream &os, const Bomb &st) {
     os << st.isActive << " op << bomb";
     return os;
+}
+
+void Bomb::explosion(sf::RenderWindow &window) {
+    sf::RectangleShape rect;
+    rect.setSize(sf::Vector2f( 51, 48));
+    rect.setFillColor(sf::Color::Magenta);
+    rect.setOutlineColor(sf::Color::Black);
+    window.draw(rect);
 }

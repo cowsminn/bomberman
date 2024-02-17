@@ -1,6 +1,6 @@
 #include "../headers/Game.h"
 
-Game::Game() : map(window), bomb(), test(1){
+Game::Game() : map(window), test(1){
     this->initWindow();
     bombCooldownClock.restart();
     bombCooldownDuration = sf::seconds(3.0f);
@@ -19,7 +19,7 @@ std::ostream &operator<<(std::ostream &os, const Game &game) {
 //        }
 
         os << "Map:\n" << game.map;
-        os << "Bomb:\n" << game.bomb << '\n';
+//        os << "Bomb:\n" << game.bomb << '\n';
 
         return os;
 }
@@ -43,8 +43,9 @@ void Game::run() {
                         this->window.close();
                     else if (e.key.code == sf::Keyboard::Space && test) {
                         /// In caz ca vreau sa pun bomba instant fara cooldown
-                        bomb.activate();
-                        bomb.setPosition(player.getPosition().x, player.getPosition().y);
+                        objects.push_back(std::make_unique<Bomb>());
+                        objects.back()->activate();
+                        objects.back()->setPosition(player.getPosition().x, player.getPosition().y);
                         test = 0;
                     }
                     break;
@@ -69,6 +70,7 @@ void Game::render() {
     this->player.render(this->window);
     for (auto& obj : objects) {
         obj->draw(this->window);
+//      obj->explosion(this->window);
     }
     this->map.display_outline(14, 8);
     this->window.display();
@@ -94,13 +96,17 @@ void Game::update() {
 
     if (sf::Keyboard::isKeyPressed(sf::Keyboard::Space) && bombCooldownClock.getElapsedTime() > bombCooldownDuration) {
 
-        bomb.activate();
-        bomb.setPosition(player.getPosition().x, player.getPosition().y);
-
+        objects.back()->activate();
+        objects.back()->setPosition(player.getPosition().x, player.getPosition().y);
         bombCooldownClock.restart();
     }
 
-    bomb.update();
+    for (auto& obj : objects) {
+        Bomb* bombPtr = dynamic_cast<Bomb*>(obj.get());
+        if (bombPtr) {
+            bombPtr->update();
+        }
+    }
 }
 
 
