@@ -1,6 +1,6 @@
 #include "../headers/Bomb.h"
 
-Bomb::Bomb() :Static_Object(), isActive(false), basePtr(nullptr) {
+Bomb::Bomb() : isActive(false){
     if (!texture.loadFromFile("textures/bomb.png")) {
         throw FailedTextureLoad("textures/bomb.png");
     }
@@ -14,7 +14,7 @@ Bomb *Bomb::clone() const{
     return new Bomb(*this);
 }
 
-Bomb::Bomb(const Bomb& other) : Static_Object(other), isActive(other.isActive), timer(other.timer), basePtr(nullptr) {}
+Bomb::Bomb(const Bomb& other) : Static_Object(other), isActive(other.isActive), timer(other.timer){}
 
 void Bomb::activate() {
     isActive = true;

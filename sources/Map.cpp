@@ -18,11 +18,16 @@ void Map::initSprite() {
 
 void Map::initTexture() {
 
-    if (!this->texture.loadFromFile("textures/wall.png")) {
-        throw FailedTextureLoad("textures/wall.png");
+    try {
+        if (!texture.loadFromFile("textures/wall.png")) {
+            throw FailedTextureLoad("wall.png");
+        }
+    } catch(const CustomException& e) {
+        std::cerr << "Exception caught: " << e.what() << std::endl;
     }
-
 }
+
+
 
 void Map::display_at_position(sf::RenderWindow &window, const std::string &texture_path, float offset_x, float offset_y,
                               float scale, float scale_x, float scale_y) {

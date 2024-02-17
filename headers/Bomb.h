@@ -10,7 +10,6 @@ class Bomb : public Static_Object {
 private:
     bool isActive;
     sf::Clock timer;
-    Static_Object *basePtr;
 
 public:
     Bomb();

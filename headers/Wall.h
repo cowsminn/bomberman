@@ -4,6 +4,7 @@
 #include <SFML/Graphics.hpp>
 #include "Static_Object.h"
 #include <iostream>
+#include "Exception.h"
 
 class Wall : public Static_Object {
 public:
