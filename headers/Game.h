@@ -4,7 +4,9 @@
 #include <SFML/Graphics.hpp>
 #include <SFML/System/Sleep.hpp>
 #include <iostream>
+#include "Static_Object.h"
 #include <vector>
+#include <memory>
 #include <chrono>
 #include <thread>
 #include "Player.h"
@@ -25,6 +27,7 @@ private:
     void initWindow();
 
     int test;
+    std::vector<std::unique_ptr<Static_Object>> objects;
 
 public:
     Game();

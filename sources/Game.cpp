@@ -26,6 +26,7 @@ std::ostream &operator<<(std::ostream &os, const Game &game) {
 
 
 void Game::run() {
+    objects.push_back(std::make_unique<Bomb>());
     while (this->window.isOpen()) {
         sf::Event e{};
         while (this->window.pollEvent(e)) {
@@ -66,7 +67,9 @@ void Game::initWindow() {
 void Game::render() {
     this->window.clear(sf::Color::White);
     this->player.render(this->window);
-    bomb.draw(this->window);
+    for (auto& obj : objects) {
+        obj->draw(this->window);
+    }
     this->map.display_outline(14, 8);
     this->window.display();
 }
