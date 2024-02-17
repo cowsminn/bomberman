@@ -70,7 +70,7 @@ void Game::render() {
     this->player.render(this->window);
     for (auto& obj : objects) {
         obj->draw(this->window);
-//      obj->explosion(this->window);
+        obj->explosion(this->window);
     }
     this->map.display_outline(14, 8);
     this->window.display();
